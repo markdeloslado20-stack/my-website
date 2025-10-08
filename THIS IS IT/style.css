@@ -1,0 +1,286 @@
+html {
+    scroll-behavior: smooth;
+}
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: Arial;
+}
+
+/*MY NAVIGATION BARRRRRRRRR*/
+.sidebar {
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: rgb(48, 48, 48);
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: black;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: rgb(37, 37, 37);
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: white;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+#home{
+  background: url(ZPIC2.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all .5s;
+}
+
+/*HOME PAGE*/
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  height: 100vh;       
+  color: white;    
+}
+
+.MYNAME {
+  text-align: center;
+}
+
+#MYPFP {
+  width: 250px;        
+  border-radius: 10px;  
+  display: block;
+  margin: 0 auto;      
+  transition: .2s;
+}
+#MYPFP:hover {
+    width: 300px;
+    box-shadow: 0 0 10px white;
+}
+
+.container {
+    margin-left: 10px;
+    display: inline-block;
+}
+.name {
+    letter-spacing: 10px;
+    text-shadow: 0 0 10px whitesmoke;
+    font-family: "Bebas Neue", sans-serif;
+    border-right: 5px solid black;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s, cursor .4s step-end infinite alternate;
+}
+@keyframes cursor {
+    50% { border-color: transparent;}
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
+
+
+/*ABOUT ME*/
+#about {
+    background-color: rgb(146, 146, 146);
+    height: 100vh;
+}
+.aboutme1 {
+    margin-top: 10%;
+    margin-left: 5%;
+    position: absolute;
+    width: 40%;
+    background-color: aliceblue;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 25px;
+}
+.aboutme2 {
+    line-height: 2rem;
+}
+
+/*SKILLS*/
+#skills {
+    background-color: rgb(70, 69, 69);
+    height: 100vh;
+}
+.myskills {
+    display: block;
+    left: 40px;
+    background-color: aliceblue;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 50%;
+    width: 500px;
+    border-radius: 30px;
+    padding: 40px;
+}
+/*PORTFOLIO*/
+
+#portfolio {
+  position: relative;
+  background-image: url(ZPIC5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  background: rgba(255, 255, 255, 0.1); 
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 40%;
+  line-height: 3rem;
+}
+
+.pulse-btn {
+  background-color: #ff7a00;
+  color: white;
+  border: none;
+  margin: 3rem;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  animation: pulse 1.5s infinite;
+}
+.pulse-btn:hover {
+  background-color: #ff9b33;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.6);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 10px rgba(255, 122, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0);
+  }
+}
+
+/*CONTACT*/
+#contact {
+  text-align: center;
+  background-color: #252525;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+#contact h2 {
+  font-size: 28px;
+  color: #faefef;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-size: 18px;
+  color: #dbdbdb;
+  margin: 10px 0;
+}
+
+#contact a {
+  color: #FAA533; 
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/*PARALLAX*/
+.between {
+  height: 20vh;
+  background-image: url('ZPIC5.jpg');
+  background-attachment: fixed; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
